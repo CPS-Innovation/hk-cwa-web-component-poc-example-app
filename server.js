@@ -2,7 +2,16 @@ const https = require("https");
 const fs = require("fs");
 const path = require("path");
 
-const PORT = 3001;
+const args = process.argv.slice(2);
+
+let PORT = 3001;
+
+args.forEach((arg, index) => {
+  if (arg === '--port' && args[index + 1]) {
+    PORT = parseInt(args[index + 1], 10);
+  }
+});
+
 const publicDir = path.join(__dirname, "public");
 
 const options = {
