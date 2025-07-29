@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Standalone Site</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+      }
+
+      .govuk-width-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <hr />
+    <button id="show-success-btn">Show Success</button>
+    <button id="show-error-btn">Show Error</button>
+    <button id="refresh-caseInfo">Refresh case info</button>
+    <hr />
+
+    <div class="govuk-width-container">
+      <case-info-summary></case-info-summary>
+      <notification-banner id="banner-component"></notification-banner>
+    </div>
+  </body>
+
+  <script
+    type="module"
+    src="http://localhost:5000/components/CaseInfoSummaryComponent/CaseInfoSummaryComponent.tsx.js"
+  ></script>
+  <script
+    src="http://localhost:5000/components/NotificationBannerComponent/NotificationBannerComponent.tsx.js"
+    type="module"
+  ></script>
+  <script src="/scripts.js"></script>
+</html>
